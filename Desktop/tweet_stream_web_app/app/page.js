@@ -15,9 +15,9 @@ export default function Home() {
         />
         <ol>
           <li>
-            Test First Push <code>app/page.js</code>.
+            Test First Push 
           </li>
-          <li>Save and see your changes instantly.</li>
+    
         </ol>
 
         <div className={styles.ctas}>
