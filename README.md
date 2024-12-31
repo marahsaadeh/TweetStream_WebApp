@@ -7,11 +7,7 @@ To set up the project, open the terminal (command interface) and follow these st
    ```
    git clone https://github.com/marahsaadeh/TweetStream_WebApp.git
    ```
-2. Move to the main folder of the project:
-   ```
-   cd <folder name>
-   ```
-3. To install needed packages for the project, use npm (Node.js package manager) to install dependencies:
+2. To install needed packages for the project, use npm (Node.js package manager) to install dependencies:
    ```
    npm install
    ```
