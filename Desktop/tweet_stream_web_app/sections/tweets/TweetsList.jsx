@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "../../components/SearchBar";
 import TweetsCard from "./TweetsCard";
-
+import LocationInMap from "@/components/LoationInMap";
 const initialTweets = [
   {
   "_id": {
@@ -302,6 +302,7 @@ export default function TweetsList() {
     }
 
     setFilteredTweets(filtered);
+    
   }, [tweets, searchQuery, isShowingFavorites, favorites]);
 
   const toggleFavorite = (id) => {
@@ -377,6 +378,10 @@ export default function TweetsList() {
           تحميل المزيد
         </button>
       )}
+
+      
+      <LocationInMap tweets={filteredTweets} />
+     
     </div>
   );
 }
