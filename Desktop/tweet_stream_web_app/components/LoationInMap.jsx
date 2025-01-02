@@ -73,7 +73,15 @@ const LocationInMap = ({ tweets = [] }) => {
   }
 
   return (
-    <div style={{ height: "300px", width: "50%", margin: "auto" }}> 
+    <div  style={{
+      height: "400px",
+      width: "50%",
+      margin: "auto",
+      border: "2px solid #333",
+      borderRadius: "10px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      overflow: "hidden",
+    }}> 
       <MapContainer bounds={bounds} style={{ height: "100%", width: "100%" }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
