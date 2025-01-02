@@ -1,7 +1,7 @@
 "use client";
 
 import TweetsList from"../sections/tweets/TweetsList";
- 
+
 export default function Home() {
   return (
     <>
@@ -9,7 +9,6 @@ export default function Home() {
           <div>
             <TweetsList />
           </div>
-
-    </>
+          </>
   );
 }

@@ -14,6 +14,7 @@ const SearchBar = ({ placeholder, onSearch }) => {
         marginTop: "160px",
         paddingLeft: "175px",
         paddingRight: "10px",
+        marginBottom:"80px",
       }}
     >
       <div style={{ position: "relative", width: "50%" }}>
@@ -25,6 +26,8 @@ const SearchBar = ({ placeholder, onSearch }) => {
             transform: "translateY(-50%)",
             display: "flex",
             alignItems: "center",
+            marginLeft:"7px",
+            marginTop:"4px"
           }}
         >
           <Image
