@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import SearchBar from "../../components/SearchBar";
 import TweetsCard from "./TweetsCard";
 import LocationInMap from "@/components/LoationInMap";
+
 const initialTweets = [
   {
   "_id": {
@@ -278,7 +279,6 @@ const initialTweets = [
 }
 
 ];
-
 export default function TweetsList() {
   const [tweets, setTweets] = useState(initialTweets);
   const [filteredTweets, setFilteredTweets] = useState([]);
@@ -302,7 +302,6 @@ export default function TweetsList() {
     }
 
     setFilteredTweets(filtered);
-    
   }, [tweets, searchQuery, isShowingFavorites, favorites]);
 
   const toggleFavorite = (id) => {
@@ -318,70 +317,76 @@ export default function TweetsList() {
   };
 
   return (
-    <div style={{ margin: "0 auto", padding: "20px" }}>
+    <div style={{ padding: "20px" }}>
       <div
         style={{
+          marginTop: "-90px",
           display: "flex",
-          justifyContent: "space-between",
-          marginBottom: "20px",
+          alignItems: "center",
+          paddingLeft: "20px",
         }}
       >
-        <SearchBar placeholder="ابحث" onSearch={setSearchQuery} />
         <button
           onClick={() => setIsShowingFavorites(!isShowingFavorites)}
           style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             padding: "10px 20px",
-            backgroundColor: isShowingFavorites ? "#007BFF" : "#F5F5F5",
-            color: isShowingFavorites ? "#FFF" : "#333",
-            border: "none",
-            borderRadius: "5px",
+            backgroundColor: "#FFF",
+            color: "#6A0DAD",
+            border: "1px solid #6A0DAD",
+            marginTop: "80px",
+            borderRadius: "12px",
             cursor: "pointer",
+            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            fontSize: "16px",
+            fontWeight: "bold",
+            width: "180px",
+            height: "50px",
+            backgroundColor: isShowingFavorites ? "#6A0DAD" : "#FFF",
+            color: isShowingFavorites ? "#FFF" : "#6A0DAD",
           }}
         >
-          {isShowingFavorites ? "عرض الكل" : "عرض المفضلة"}
-        </button>
-      </div>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: "20px",
-        }}
-      >
-        {filteredTweets.slice(0, currentIndex).map((tweet) => (
-          <TweetsCard
-            key={tweet.id.$numberLong}
-            tweet={tweet}
-            isFavorite={favorites.includes(tweet.id.$numberLong)}
-            onToggleFavorite={() => toggleFavorite(tweet.id)}
+          <img
+            src="/images/emp-heart.png"
+            alt="heart icon"
+            style={{
+              width: "20px",
+              height: "20px",
+              marginRight: "8px",
+            }}
           />
-        ))}
+          {isShowingFavorites ? "Show All" : "Favorites"}
+        </button>
+
+        <SearchBar placeholder="search" onSearch={setSearchQuery} />
       </div>
 
-      {currentIndex < filteredTweets.length && (
-        <button
-          onClick={loadMore}
+
+      {searchQuery && (
+        <div
           style={{
-            marginTop: "20px",
-            padding: "10px 20px",
-            backgroundColor: "#007BFF",
-            color: "#FFF",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-            display: "block",
-            marginLeft: "auto",
-            marginRight: "auto",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            marginBottom: "20px",
+            gap: "20px",
           }}
         >
-          تحميل المزيد
-        </button>
+          {filteredTweets.slice(0, currentIndex).map((tweet) => (
+            <TweetsCard
+              key={tweet.id.$numberLong}
+              tweet={tweet}
+              isFavorite={favorites.includes(tweet.id.$numberLong)}
+              onToggleFavorite={() => toggleFavorite(tweet.id)}
+            />
+          ))}
+        </div>
       )}
 
-      
+
+
       <LocationInMap tweets={filteredTweets} />
-     
     </div>
   );
 }

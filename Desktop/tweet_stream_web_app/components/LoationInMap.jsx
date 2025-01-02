@@ -74,8 +74,8 @@ const LocationInMap = ({ tweets = [] }) => {
 
   return (
     <div  style={{
-      height: "400px",
-      width: "50%",
+      height: "600px",
+      width: "100%",
       margin: "auto",
       border: "2px solid #333",
       borderRadius: "10px",
