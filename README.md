@@ -1,14 +1,14 @@
 # **TweetStream Web Application**
 
 ## **Overview**
-This project connects a web app to a MongoDB database using Mongoose. Data is fetched dynamically from the database. The project includes features like cards, favorites, search, charts, and interactive data display.
+This project is a web application that connects to a MongoDB database using Mongoose. It dynamically fetches and displays processed tweet data stored in the database. The application features interactive tweet cards, a favorites system, a search functionality, and visualizations such as sentiment analysis and trend charts to provide an intuitive and user-friendly experience.
 
 ---
 
 ## **Features**
 1. **Database Connection:**
    - The application connects to a MongoDB database hosted on Atlas.
-   - Instead of using hardcoded arrays, data is dynamically fetched from the database.
+   - Instead of using a **Fake Database** (data was read from a static file, `bd.js`)
 
 2. **Dynamic UI Components:**
    - **Tweet Cards:** Displays tweet data with details like text, users, and locations.
