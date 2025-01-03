@@ -4,6 +4,7 @@ import SearchBar from "../../components/SearchBar";
 import TweetsCard from "./TweetsCard";
 import LocationInMap from "@/components/LoationInMap";
 import TrendChart from "../../components/TrendChart";
+import SentimentChart from "../../components/SentimentChart";
 const initialTweets = [
   {
   "_id": {
@@ -390,6 +391,16 @@ export default function TweetsList() {
           <h2>Trend Diagram</h2>
           <TrendChart tweets={filteredTweets} />
 
+        </>
+      )}
+
+{searchQuery && (
+        <>
+          <h2>Trend Diagram</h2>
+          <TrendChart tweets={filteredTweets} />
+
+          <h2>Sentiment Analysis</h2>
+          <SentimentChart tweets={filteredTweets} />
         </>
       )}
 
