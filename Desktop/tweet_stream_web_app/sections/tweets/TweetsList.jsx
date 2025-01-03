@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import SearchBar from "../../components/SearchBar";
 import TweetsCard from "./TweetsCard";
 import LocationInMap from "@/components/LoationInMap";
-
+import TrendChart from "../../components/TrendChart";
 const initialTweets = [
   {
   "_id": {
@@ -385,6 +385,13 @@ export default function TweetsList() {
       )}
 
 
+{searchQuery && (
+        <>
+          <h2>Trend Diagram</h2>
+          <TrendChart tweets={filteredTweets} />
+
+        </>
+      )}
 
       <LocationInMap tweets={filteredTweets} />
     </div>
