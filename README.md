@@ -35,18 +35,25 @@ To connect to the database, use the following credentials:
 - **Username:** marah4saadeh
 - **Password:** T3T3PCAitM5T5Vih
 - **Connection String:**
-mongodb+srv://marah4saadeh:T3T3PCAitM5T5Vih@cluster0.e8qpm.mongodb.net/TweetDB
+  ```bash
+  mongodb+srv://marah4saadeh:T3T3PCAitM5T5Vih@cluster0.e8qpm.mongodb.net/TweetDB
+  ```
 
 ### **Setting Up the Environment**
 1. Install dependencies:
- ```bash
- npm install
+   ```bash
+   npm install
+   ```
 
-2.Start the backend server:
- ```bash
-npx nodemon server.js
+2. Start the backend server:
+   ```bash
+   npx nodemon server.js
+   ```
 
-3.Start the frontend application:
- ```bash
-npm run dev
+3. Start the frontend application:
+   ```bash
+   npm run dev
+   ```
+
+---
 
